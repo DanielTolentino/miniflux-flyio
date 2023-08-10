@@ -1,0 +1,30 @@
+version: '3'
+services:
+  miniflux:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgres://miniflux:secret@db/miniflux?sslmode=disable
+      - RUN_MIGRATIONS=1
+      - CREATE_ADMIN=1
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=secret
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=miniflux
+      - POSTGRES_PASSWORD=PASSWORD
+    volumes:
+      - miniflux-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux"]
+      interval: 10s
+      start_period: 30s
+volumes:
+  miniflux-db:

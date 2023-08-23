@@ -1,4 +1,4 @@
-qversion: '3'
+version: '3'
 services:
   miniflux:
     build:
@@ -15,7 +15,8 @@ services:
       - CREATE_ADMIN=1
       - ADMIN_USERNAME=admin
       - ADMIN_PASSWORD=secret
-      - BASE_URL=http://reader.danieltolentino.tech/
+      - BASE_URL=https://reader.danieltolentino.tech/
+      - ROOT_URL=https://reader.danieltolentino.tech/
   db:
     image: postgres:15
     environment:

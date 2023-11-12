@@ -8,6 +8,7 @@ ENV CREATE_ADMIN=1
 ENV ADMIN_USERNAME=admin
 ENV ADMIN_PASSWORD=secret
 ENV BASE_URL=https://reader.danieltolentino.tech/
+ENV WEBAUTHN=1
 # Expose port 8080
 EXPOSE 8080
 

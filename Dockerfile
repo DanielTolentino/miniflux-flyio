@@ -1,8 +1,8 @@
 # Use the official Miniflux image as base
-FROM miniflux/miniflux:latest
+FROM miniflux/miniflux:2.0.51
 
 # Set environment variables
-ENV DATABASE_URL=postgres://miniflux:secret@db/miniflux?sslmode=disable
+ENV DATABASE_URL=postgres://postgres:dbpswd@db.zrjsmispnqiugnchdung.supabase.co:5432/postgres?sslmode=require
 ENV RUN_MIGRATIONS=1
 ENV CREATE_ADMIN=1
 ENV ADMIN_USERNAME=admin

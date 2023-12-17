@@ -10,7 +10,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      - DATABASE_URL=DATABASE_URL=postgres://postgres:dbpswd@db.zrjsmispnqiugnchdung.supabase.co:5432/postgres?sslmode=require
+      - DATABASE_URL=postgres://postgres:dbpswd@db.zrjsmispnqiugnchdung.supabase.co:5432/postgres?sslmode=require
       - ENV RUN_MIGRATIONS=1
       - RUN_MIGRATIONS=1
       - CREATE_ADMIN=1

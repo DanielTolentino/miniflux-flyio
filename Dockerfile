@@ -2,7 +2,7 @@
 FROM miniflux/miniflux:2.0.51
 
 # Set environment variables
-ENV DATABASE_URL=postgresql://postgres:dbpsw@db.zrjsmispnqiugnchdung.supabase.co:5432/postgres?sslmode=disable
+ENV DATABASE_URL=postgresql://postgres:dbpsw@db.zrjsmispnqiugnchdung.supabase.co:5432/postgres?sslmode=require
 ENV RUN_MIGRATIONS=1
 ENV CREATE_ADMIN=1
 ENV ADMIN_USERNAME=admin
